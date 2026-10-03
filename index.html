@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shane Vincent Capales - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              bg: '#0F172A',
+              card: '#1E293B',
+              cardHover: '#334155',
+              sidebar: '#0B1120',
+              border: '#334155',
+              borderLight: '#475569',
+              primary: '#38BDF8', // Cyan/Sky blue
+              accent: '#F59E0B',  // Amber
+              accentLight: '#FCD34D',
+              textMain: '#F8FAFC',
+              textMuted: '#94A3B8',
+              tagBg: 'rgba(56, 189, 248, 0.1)',
+            }
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0F172A;
+      color: #F8FAFC;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    .font-heading {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    /* Gradient accent texts */
+    .text-gradient {
+      background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #F59E0B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-amber {
+      background: linear-gradient(135deg, #F59E0B 0%, #FCD34D 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0F172A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+  </style>
+</head>
+<body class="bg-theme-bg text-theme-textMain antialiased font-sans text-base min-h-screen">
+
+  <div class="flex min-h-screen w-full flex-col md:flex-row">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="w-full md:w-80 flex-shrink-0 bg-theme-sidebar border-b md:border-b-0 md:border-r border-theme-border flex flex-col justify-between p-6 md:sticky md:top-0 md:h-screen overflow-y-auto select-none z-20">
+      
+      <div>
+        <!-- Profile Header -->
+        <div class="flex items-center space-x-4 pb-6 border-b border-theme-border">
+          <div class="relative w-14 h-14 rounded-full overflow-hidden border-2 border-theme-primary flex-shrink-0 bg-slate-800 shadow-lg shadow-sky-500/10">
+            <img src="me.JPG" 
+                 onerror="this.src='https://placehold.co/150x150/1E293B/F8FAFC?text=Profile'" 
+                 alt="Ma. Shane Vincent Capales" 
+                 class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h1 class="font-heading font-bold text-xl tracking-tight text-white leading-tight">
+              Shane Vincent <br><span class="text-theme-primary">Capaless</span>
+            </h1>
+            <p class="text-xs text-theme-textMuted mt-1 leading-normal font-medium">
+              BS INFORMATION TECHNOLOGY
+            </p>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="mt-6 space-y-2">
+          <a href="#about" class="flex items-center space-x-3 text-sm md:text-base font-medium text-slate-300 hover:text-theme-primary hover:bg-slate-800/60 hover:translate-x-1 transition-all py-2.5 px-3 rounded-lg border border-transparent hover:border-theme-border">
+            <span class="w-2 h-2 rounded-full bg-theme-primary inline-block flex-shrink-0"></span>
+            <span class="text-xs text-theme-textMuted font-mono mr-1">§ 01</span>
+            <span>About</span>
+          </a>
+          <a href="#skills" class="flex items-center space-x-3 text-sm md:text-base font-medium text-slate-300 hover:text-theme-primary hover:bg-slate-800/60 hover:translate-x-1 transition-all py-2.5 px-3 rounded-lg border border-transparent hover:border-theme-border">
+            <span class="w-2 h-2 rounded-full bg-indigo-400 inline-block flex-shrink-0"></span>
+            <span class="text-xs text-theme-textMuted font-mono mr-1">§ 02</span>
+            <span>Skills</span>
+          </a>
+          <a href="#projects" class="flex items-center space-x-3 text-sm md:text-base font-medium text-slate-300 hover:text-theme-primary hover:bg-slate-800/60 hover:translate-x-1 transition-all py-2.5 px-3 rounded-lg border border-transparent hover:border-theme-border">
+            <span class="w-2 h-2 rounded-full bg-theme-accent inline-block flex-shrink-0"></span>
+            <span class="text-xs text-theme-textMuted font-mono mr-1">§ 03</span>
+            <span>Projects</span>
+          </a>
+          <a href="#experience" class="flex items-center space-x-3 text-sm md:text-base font-medium text-slate-300 hover:text-theme-primary hover:bg-slate-800/60 hover:translate-x-1 transition-all py-2.5 px-3 rounded-lg border border-transparent hover:border-theme-border">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block flex-shrink-0"></span>
+            <span class="text-xs text-theme-textMuted font-mono mr-1">§ 04</span>
+            <span>Experience & Education</span>
+          </a>
+          <a href="#contact" class="flex items-center space-x-3 text-sm md:text-base font-medium text-slate-300 hover:text-theme-primary hover:bg-slate-800/60 hover:translate-x-1 transition-all py-2.5 px-3 rounded-lg border border-transparent hover:border-theme-border">
+            <span class="w-2 h-2 rounded-full bg-rose-400 inline-block flex-shrink-0"></span>
+            <span class="text-xs text-theme-textMuted font-mono mr-1">§ 05</span>
+            <span>Contact</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Footer Info in Sidebar -->
+      <div class="pt-5 mt-6 md:mt-0 border-t border-theme-border text-xs text-theme-textMuted space-y-1">
+        <p class="uppercase tracking-wider font-mono text-[11px] text-theme-primary/80">PORTFOLIO · 2026</p>
+        <p>Last updated: September 2026</p>
+      </div>
+
+    </aside>
+
+    <!-- Decorative Gradient Border Bar -->
+    <div class="w-full h-1 md:w-1 md:h-auto bg-gradient-to-b from-sky-500 via-indigo-500 to-amber-500 flex-shrink-0 z-10"></div>
+
+    <!-- ================= MAIN CONTENT AREA ================= -->
+    <main class="flex-1 bg-theme-bg p-6 md:p-12 lg:p-14 space-y-16">
+
+      <!-- SECTION 01: ABOUT -->
+      <section id="about" class="pt-2">
+        <div class="flex items-center justify-between border-b border-theme-border pb-3 mb-8">
+          <span class="text-xs md:text-sm font-mono text-theme-primary font-semibold">§ 01 ABOUT</span>
+          <span class="text-xs uppercase tracking-widest text-theme-textMuted font-mono">PORTFOLIO · 2026</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-8 space-y-5">
+            <h1 class="font-heading text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight">
+              Shane Vincent <span class="text-gradient">Capales</span>
+            </h1>
+
+            <p class="text-lg md:text-xl font-medium text-slate-300 leading-relaxed">
+              An information technology student passionate about building simple web applications, learning hardware basics, and solving real-world coding problems step by step.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-2.5 text-xs md:text-sm font-mono pt-1">
+              <span class="bg-sky-500/10 text-sky-400 border border-sky-500/20 px-3 py-1 rounded-full">⚡ Web Development</span>
+              <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-3 py-1 rounded-full">🔌 Hardware & Arduino</span>
+              <span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-3 py-1 rounded-full">🛠 Problem Solving</span>
+              <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full">🎓 ESSU Main</span>
+            </div>
+
+            <div class="bg-theme-card border border-theme-border rounded-2xl p-6 md:p-8 space-y-4 text-base md:text-lg text-slate-300 leading-relaxed mt-6 shadow-xl relative overflow-hidden">
+              <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-sky-500/10 rounded-full blur-2xl pointer-events-none"></div>
+              
+              <h2 class="font-heading text-2xl md:text-3xl text-white font-bold mb-2 flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-theme-primary inline-block"></span> About Me
+              </h2>
+              <p>
+                Hi! I am <strong class="text-white">Shane Vincent Capales</strong>, a Bachelor of Science in Information Technology (BSIT) student at Eastern Samar State University. I have a strong interest in technology and love learning how software and basic hardware components work together.
+              </p>
+              <p>
+                Most of my hands-on experience comes from class projects, coding assignments, and personal practice. I enjoy building clean, easy-to-use websites using HTML, CSS, and JavaScript, as well as experimenting with simple Arduino circuits. When my code runs into errors, I take the time to research, test, and debug until everything runs smoothly.
+              </p>
+              <p>
+                My goal right now is to keep improving my programming skills, work on meaningful academic projects, and build a strong foundation for a career in the IT field after I graduate.
+              </p>
+            </div>
+          </div>
+
+          <!-- Hero Avatar Card -->
+          <div class="lg:col-span-4 flex flex-col items-center justify-center pt-2">
+            <div class="p-1.5 rounded-full bg-gradient-to-tr from-sky-500 via-indigo-500 to-amber-500 shadow-2xl shadow-sky-500/20">
+              <div class="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden bg-theme-card border-4 border-theme-bg">
+                <img src="me.JPG" 
+                     onerror="this.src='https://placehold.co/300x300/1E293B/F8FAFC?text=Shane+Vincent'" 
+                     alt="Shane Vincent Capales" 
+                     class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm font-mono text-theme-primary font-semibold">@shanevincent</p>
+              <p class="text-xs text-theme-textMuted mt-0.5">BSIT Student & Developer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 02: SKILLS -->
+      <section id="skills" class="pt-8 border-t border-theme-border">
+        <div class="flex items-center justify-between border-b border-theme-border pb-3 mb-8">
+          <span class="text-xs md:text-sm font-mono text-indigo-400 font-semibold">§ 02 SKILLS</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-bold">Technical Focus</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Web & Coding Card -->
+          <div class="bg-theme-card p-6 rounded-2xl border border-theme-border hover:border-sky-500/50 hover:bg-slate-800/80 transition-all duration-300 shadow-lg flex flex-col justify-between group">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold mb-4 text-xl group-hover:scale-110 transition-transform">🌐</div>
+              <h3 class="font-heading text-xl text-white font-bold mb-2">Web Coding & Dev</h3>
+              <p class="text-sm text-theme-textMuted mb-5 leading-relaxed">Structuring web layouts, writing front-end scripts, and building user-friendly web pages.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-theme-border/60">
+              <span class="bg-sky-500/10 text-sky-300 text-xs font-mono px-3 py-1 rounded-lg border border-sky-500/20">HTML5</span>
+              <span class="bg-sky-500/10 text-sky-300 text-xs font-mono px-3 py-1 rounded-lg border border-sky-500/20">CSS3</span>
+              <span class="bg-sky-500/10 text-sky-300 text-xs font-mono px-3 py-1 rounded-lg border border-sky-500/20">JavaScript</span>
+              <span class="bg-sky-500/10 text-sky-300 text-xs font-mono px-3 py-1 rounded-lg border border-sky-500/20">Responsive UI</span>
+            </div>
+          </div>
+
+          <!-- Hardware Card -->
+          <div class="bg-theme-card p-6 rounded-2xl border border-theme-border hover:border-amber-500/50 hover:bg-slate-800/80 transition-all duration-300 shadow-lg flex flex-col justify-between group">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold mb-4 text-xl group-hover:scale-110 transition-transform">⚙️</div>
+              <h3 class="font-heading text-xl text-white font-bold mb-2">Hardware & Microcontrollers</h3>
+              <p class="text-sm text-theme-textMuted mb-5 leading-relaxed">Wiring sensors, writing C/C++ embedded code, and prototyping physical hardware systems.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-theme-border/60">
+              <span class="bg-amber-500/10 text-amber-300 text-xs font-mono px-3 py-1 rounded-lg border border-amber-500/20">Arduino</span>
+              <span class="bg-amber-500/10 text-amber-300 text-xs font-mono px-3 py-1 rounded-lg border border-amber-500/20">Embedded C/C++</span>
+              <span class="bg-amber-500/10 text-amber-300 text-xs font-mono px-3 py-1 rounded-lg border border-amber-500/20">Sensors</span>
+              <span class="bg-amber-500/10 text-amber-300 text-xs font-mono px-3 py-1 rounded-lg border border-amber-500/20">Prototyping</span>
+            </div>
+          </div>
+
+          <!-- Debugging Card -->
+          <div class="bg-theme-card p-6 rounded-2xl border border-theme-border hover:border-indigo-500/50 hover:bg-slate-800/80 transition-all duration-300 shadow-lg flex flex-col justify-between group">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold mb-4 text-xl group-hover:scale-110 transition-transform">🔍</div>
+              <h3 class="font-heading text-xl text-white font-bold mb-2">Research & Debugging</h3>
+              <p class="text-sm text-theme-textMuted mb-5 leading-relaxed">Analyzing documentation, systematic bug tracking, and step-by-step problem solving.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-theme-border/60">
+              <span class="bg-indigo-500/10 text-indigo-300 text-xs font-mono px-3 py-1 rounded-lg border border-indigo-500/20">Research</span>
+              <span class="bg-indigo-500/10 text-indigo-300 text-xs font-mono px-3 py-1 rounded-lg border border-indigo-500/20">Debugging</span>
+              <span class="bg-indigo-500/10 text-indigo-300 text-xs font-mono px-3 py-1 rounded-lg border border-indigo-500/20">Git</span>
+              <span class="bg-indigo-500/10 text-indigo-300 text-xs font-mono px-3 py-1 rounded-lg border border-indigo-500/20">VS Code</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 03: PROJECTS -->
+      <section id="projects" class="pt-8 border-t border-theme-border">
+        <div class="flex items-center justify-between border-b border-theme-border pb-3 mb-8">
+          <span class="text-xs md:text-sm font-mono text-amber-400 font-semibold">§ 03 PROJECTS</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-bold">Featured Works</h2>
+        </div>
+
+        <div class="space-y-8">
+
+          <!-- Project 1 -->
+          <div class="bg-theme-card rounded-2xl border border-theme-border p-6 md:p-8 shadow-xl hover:border-sky-500/40 transition-all duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-6 flex flex-col justify-between space-y-5">
+                <div class="space-y-3">
+                  <div class="inline-block px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-mono">
+                    E-Commerce Platform
+                  </div>
+                  <h3 class="font-heading text-2xl md:text-3xl text-white font-bold">Cisco Networking Basics Certificate</h3>
+                  <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                    Cisco Networking Basics Certificate — Earned on August 1, 2026, this official Cisco Networking Academy certification confirms successful completion of the Networking Basics course, demonstrating foundational knowledge of computer networks, IP addressing, routing, and network protocols.
+                  </p>
+                </div>
+
+                <div class="space-y-4 pt-1">
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-slate-800 text-sky-300 text-xs font-mono px-3 py-1 rounded-md border border-slate-700">HTML</span>
+                    <span class="bg-slate-800 text-sky-300 text-xs font-mono px-3 py-1 rounded-md border border-slate-700">CSS</span>
+                    <span class="bg-slate-800 text-sky-300 text-xs font-mono px-3 py-1 rounded-md border border-slate-700">JAVASCRIPT</span>
+                  </div>
+
+                  <div class="flex items-center space-x-4 text-xs md:text-sm font-mono pt-2">
+                    <a href="#" class="inline-flex items-center space-x-2 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold px-4 py-2 rounded-xl transition-colors">
+                      <span></span>
+                      <span>↗</span>
+                    </a>
+                    <a href="#" class="inline-flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-white font-medium px-4 py-2 rounded-xl border border-slate-700 transition-colors">
+                      <span></span>
+                      <span>↗</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Image 1 -->
+              <div class="lg:col-span-6">
+                <div class="w-full max-h-80 rounded-xl overflow-hidden border border-theme-border shadow-2xl bg-slate-900 group">
+                  <img src="project1.JPG" 
+                       onerror="this.src='https://placehold.co/800x600/1E293B/38BDF8?text=Furniture+App'" 
+                       alt="Furniture App" 
+                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="bg-theme-card rounded-2xl border border-theme-border p-6 md:p-8 shadow-xl hover:border-emerald-500/40 transition-all duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-6 flex flex-col justify-between space-y-5">
+                <div class="space-y-3">
+                  <div class="inline-block px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
+                    FinTech Management
+                  </div>
+                  <h3 class="font-heading text-2xl md:text-3xl text-white font-bold">To-Do List App</h3>
+                  <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                    To-Do List App — A simple yet functional task management web application built with Laravel, PHP, MySQL, and CSS. Features include adding tasks, marking items as complete, editing, deleting, and clearing finished tasks. Developed by Group 1 as a practical project to demonstrate full-stack web development skills.
+                  </p>
+                </div>
+
+                <div class="space-y-4 pt-1">
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-slate-800 text-emerald-300 text-xs font-mono px-3 py-1 rounded-md border border-slate-700">HTML</span>
+                    <span class="bg-slate-800 text-emerald-300 text-xs font-mono px-3 py-1 rounded-md border border-slate-700">CSS</span>
+                    <span class="bg-slate-800 text-emerald-300 text-xs font-mono px-3 py-1 rounded-md border border-slate-700">JAVASCRIPT</span>
+                  </div>
+
+                  <div class="flex items-center space-x-4 text-xs md:text-sm font-mono pt-2">
+                    <a href="#" class="inline-flex items-center space-x-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2 rounded-xl transition-colors">
+                      <span></span>
+                      <span>↗</span>
+                    </a>
+                    <a href="#" class="inline-flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-white font-medium px-4 py-2 rounded-xl border border-slate-700 transition-colors">
+                      <span></span>
+                      <span>↗</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Image 2 -->
+              <div class="lg:col-span-6">
+                <div class="w-full max-h-80 rounded-xl overflow-hidden border border-theme-border shadow-2xl bg-slate-900 group">
+                  <img src="project2.JPG" 
+                       onerror="this.src='https://placehold.co/800x600/1E293B/34D399?text=Money+Lending+App'" 
+                       alt="Money Lending App" 
+                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 04: EXPERIENCE & EDUCATION -->
+      <section id="experience" class="pt-8 border-t border-theme-border">
+        <div class="flex items-center justify-between border-b border-theme-border pb-3 mb-8">
+          <span class="text-xs md:text-sm font-mono text-emerald-400 font-semibold">§ 04 TIMELINE</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-bold">Experience & Education</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <!-- Experience Column -->
+          <div class="space-y-6">
+            <h3 class="font-heading text-2xl text-white font-bold border-b border-theme-border pb-3 flex items-center gap-2">
+              <span class="text-sky-400">💼</span> Experience
+            </h3>
+
+            <div class="bg-theme-card p-6 rounded-2xl border border-theme-border space-y-3">
+              <div class="flex justify-between items-start">
+                <h4 class="font-heading text-lg text-white font-bold">Web Development & Coding</h4>
+                <span class="text-xs font-mono bg-sky-500/10 text-sky-400 px-2.5 py-1 rounded-md border border-sky-500/20">2023 – Present</span>
+              </div>
+              <p class="text-xs font-mono text-theme-textMuted">Independent & Academic Projects</p>
+              <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside pt-1 leading-relaxed">
+                <li>Built responsive user interfaces using HTML, CSS, and JavaScript.</li>
+                <li>Systematically debugged frontend logic and resolved layout bugs.</li>
+                <li>Researched modern web design patterns and mobile-friendly standards.</li>
+              </ul>
+            </div>
+
+            <div class="bg-theme-card p-6 rounded-2xl border border-theme-border space-y-3">
+              <div class="flex justify-between items-start">
+                <h4 class="font-heading text-lg text-white font-bold">Arduino Hardware Experiments</h4>
+                <span class="text-xs font-mono bg-amber-500/10 text-amber-400 px-2.5 py-1 rounded-md border border-amber-500/20">2023 – Present</span>
+              </div>
+              <p class="text-xs font-mono text-theme-textMuted">Academic Hardware Labs</p>
+              <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside pt-1 leading-relaxed">
+                <li>Programmed microcontrollers using C/C++ to process sensor input.</li>
+                <li>Troubleshot breadboard wiring, pin connections, and circuit logic errors.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Education Column -->
+          <div class="space-y-6">
+            <h3 class="font-heading text-2xl text-white font-bold border-b border-theme-border pb-3 flex items-center gap-2">
+              <span class="text-indigo-400">🎓</span> Education
+            </h3>
+
+            <div class="bg-theme-card p-6 rounded-2xl border border-theme-border space-y-3">
+              <div class="flex justify-between items-start">
+                <h4 class="font-heading text-lg text-white font-bold">BS Information Technology</h4>
+                <span class="text-xs font-mono bg-indigo-500/10 text-indigo-400 px-2.5 py-1 rounded-md border border-indigo-500/20">2023 – Present</span>
+              </div>
+              <p class="text-xs font-mono text-theme-textMuted">Eastern Samar State University (ESSU Main)</p>
+              <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside pt-1 leading-relaxed">
+                <li>Focused on computer programming, web architecture, and hardware logic.</li>
+                <li>Active in hands-on laboratory exercises and software prototyping.</li>
+              </ul>
+            </div>
+
+            <div class="bg-theme-card p-6 rounded-2xl border border-theme-border space-y-3">
+              <div class="flex justify-between items-start">
+                <h4 class="font-heading text-lg text-white font-bold">Senior High School</h4>
+                <span class="text-xs font-mono bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md border border-slate-700">2021 – 2023</span>
+              </div>
+              <p class="text-xs font-mono text-theme-textMuted">Academic Track</p>
+              <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside pt-1 leading-relaxed">
+                <li>Gained foundational knowledge in logic building, basic programming, and research.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 05: CONTACT -->
+      <section id="contact" class="pt-8 border-t border-theme-border pb-12">
+        <div class="flex items-center justify-between border-b border-theme-border pb-3 mb-8">
+          <span class="text-xs md:text-sm font-mono text-rose-400 font-semibold">§ 05 CONTACT</span>
+          <h2 class="font-heading text-3xl md:text-4xl text-white font-bold">Get In Touch</h2>
+        </div>
+
+        <div class="max-w-xl space-y-6">
+          <p class="text-lg text-slate-300 leading-relaxed">
+            I'm always open to discussing web development, Arduino projects, or student collaboration opportunities. Feel free to connect!
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <a href="mailto:shanevincent@gmail.com" class="flex items-center justify-between p-4 bg-theme-card rounded-2xl border border-theme-border hover:border-sky-500 hover:bg-slate-800/80 transition-all duration-300 group">
+              <span class="font-mono text-sm md:text-base text-white group-hover:text-sky-400 transition-colors">shanevincent@gmail.com</span>
+              <span class="text-xs font-mono uppercase bg-sky-500/10 text-sky-400 px-3 py-1 rounded-lg border border-sky-500/20">EMAIL ↗</span>
+            </a>
+
+            <a href="https://github.com/shanevincent" target="_blank" class="flex items-center justify-between p-4 bg-theme-card rounded-2xl border border-theme-border hover:border-amber-500 hover:bg-slate-800/80 transition-all duration-300 group">
+              <span class="font-mono text-sm md:text-base text-white group-hover:text-amber-400 transition-colors">github.com/shanevincent</span>
+              <span class="text-xs font-mono uppercase bg-amber-500/10 text-amber-400 px-3 py-1 rounded-lg border border-amber-500/20">GITHUB ↗</span>
+            </a>
+
+            <a href="https://linkedin.com/in/shanevincent" target="_blank" class="flex items-center justify-between p-4 bg-theme-card rounded-2xl border border-theme-border hover:border-indigo-500 hover:bg-slate-800/80 transition-all duration-300 group">
+              <span class="font-mono text-sm md:text-base text-white group-hover:text-indigo-400 transition-colors">linkedin.com/in/shanevincent</span>
+              <span class="text-xs font-mono uppercase bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-lg border border-indigo-500/20">LINKEDIN ↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
